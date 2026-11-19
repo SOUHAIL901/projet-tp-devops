@@ -47,3 +47,9 @@ test("addTask retire les espaces autour du titre", function () {
  addTask(tasks, "  Réviser la CI  ");
  assert.strictEqual(tasks[4].title, "Réviser la CI");
 });
+
+test("toggleTask remet une tâche terminée à non terminée", function () {
+ const tasks = defaultTasks();
+ toggleTask(tasks, 0);
+ assert.strictEqual(tasks[0].done, false);
+});
